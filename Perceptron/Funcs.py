@@ -98,7 +98,7 @@ def test(runs,amount,weights,size=200):
                 correct += 1
         stats.append(round((correct/(2*amount))*100))
 
-    print(f'{np.mean(stats)} is the average correct guesses for these weights')
+    print(f'{np.mean(stats)}% is the average correct guesses for these weights')
     plt.hist(list(np.sort(stats)), bins=len(np.unique(stats)));
     plt.title(f'Accuracy of perceptron over {runs} runs.');
     plt.xlabel('Accuracy (%)');
