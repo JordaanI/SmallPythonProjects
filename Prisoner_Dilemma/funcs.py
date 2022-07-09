@@ -16,7 +16,7 @@ def initialize(n):
     return seq, unique_prisoners
 
 
-def generate_data(num_of_prisoners):
+def one_run(num_of_prisoners):
     seq, unique_prisoners = initialize(num_of_prisoners)
     res = []
     while unique_prisoners:
@@ -27,3 +27,9 @@ def generate_data(num_of_prisoners):
         return 1
     else:
         return 0
+
+def many_runs(number_of_runs,number_of_prisoners):
+    res = []
+    for i in range(number_of_runs):
+        res.append(one_run(number_of_prisoners))
+    return res
