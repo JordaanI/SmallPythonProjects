@@ -14,7 +14,7 @@ def generate_square(size):
     start_point = np.random.randint(0,size,(1,2))
     lengthsize = start_point[0,0] + length
     heightsize = start_point[0,1] + height
-    while lengthsize > size or heightsize > size or length*height < size**2/10 or length*height > size**2/5:
+    while lengthsize > size or heightsize > size:
         length, height = generate_square_size(0,1,size)
         start_point = np.random.randint(1,size,(1,2))
         lengthsize = start_point[0,0] + length
@@ -33,7 +33,7 @@ def generate_triangle(size):
     height = (1-base)/-2
     lengthsize = start_point[0,0] + base
     heightsize = start_point[0,1] + int(height)+1
-    while lengthsize > size or heightsize > size or 0.5*base*height < size**2/10 or 0.5*base*height > size**2/5:
+    while lengthsize > size or heightsize > size:
         start_point = np.random.randint(0,size,(1,2))
         base = 2*np.random.randint(2,size//2)-1
         height = (1-base)/-2
